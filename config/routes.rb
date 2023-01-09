@@ -12,7 +12,8 @@ Rails.application.routes.draw do
   #get 'books/edit'
   #上記三つを下記一行に変更。
   resources :books, only: [:show, :edit, :index]
-  root to: 'homes#top'
+  root to: "homes#top"
+
 
 
 
