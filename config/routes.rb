@@ -1,18 +1,20 @@
 Rails.application.routes.draw do
   devise_for :users
+  root to: "homes#top"
+  get '/home/about' => 'homes#about', as: 'about'
 
 
   #get 'users/index'
   #get 'users/show'
   #get 'users/edit'
   #上記三つを下記一行に変更。
-  resources :users, only: [:show, :edit, :index, :update]
+  resources :users
   #get 'books/index'
   #get 'books/show'
   #get 'books/edit'
   #上記三つを下記一行に変更。
-  resources :books, only: [:show, :edit, :index]
-  root to: "homes#top"
+  resources :books
+
 
 
 
