@@ -64,7 +64,11 @@
                 <%= image_tag 'no_image', size: "100x100" %>
               <% end %>
             </td>
-            <td><%= book.title %></td>
+            <td>
+              <%= link_to book_path(current_user.id), class: 'text_light' do %>
+                <%= book.title %>
+              <% end %>
+            </td>
             <td><%= book.body %></td>
           </tr>
         </tbody>
