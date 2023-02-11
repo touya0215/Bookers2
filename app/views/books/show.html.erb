@@ -1,26 +1,29 @@
-<div class="container">
+<p id="notice"></p>
+<div class="container px-5 px-sm-0">
   <div class="row">
-    <%= render 'book_list', current_user: @findbook.user %>
+    <div class="col-md-3">
+      <%= render 'book_list', user: @findbook.user %>
+    </div>
     <div class="col-md-8 offset-md-1">
       <h2>Book detail</h2>
-      <tr>
-        <td>
-          <%= image_tag @findbook.user.get_profile_image(100,100) %>
-          <%= link_to users_path, class: 'nav-link text_light' do %>
-            <%= @findbook.user.name %>
-          <% end %>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <%= @findbook.title %>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <%= @findbook.body %>
-        </td>
-      </tr>
+      <table class="table">
+        <tbody>
+          <tr>
+            <td>
+              <%= image_tag @findbook.user.get_profile_image(100,100) %>
+              <%= link_to user_path, class: 'text_light' do %>
+                <%= @findbook.user.name %>
+              <% end %>
+            </td>
+            <td>
+              <%= @findbook.title %>
+            </td>
+            <td>
+              <%= @findbook.body %>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </div>

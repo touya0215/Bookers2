@@ -1,6 +1,8 @@
 <div class="container px-5 px-sm-0">
   <div class="row">
-    <%= render 'book_list' %>
+    <div class="col-md-3" >
+      <%= render 'book_list', user: current_user%>
+    </div>
     <div class="col-md-8 offset-md-1">
       <h2>Books</h2>
       <table calss="table table-hover table-inverse">
