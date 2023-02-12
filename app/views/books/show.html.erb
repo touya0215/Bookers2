@@ -11,7 +11,7 @@
           <tr>
             <td>
               <%= image_tag @findbook.user.get_profile_image(100,100) %>
-              <%= link_to user_path, class: 'text_light' do %>
+              <%= link_to user_path(params[:id]), class: 'text_light' do %>
                 <%= @findbook.user.name %>
               <% end %>
             </td>
