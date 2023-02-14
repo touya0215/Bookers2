@@ -16,7 +16,7 @@
               <% end %>
             </td>
             <td>
-              <%= @findbook.title %>
+              <%= link_to @findbook.title, book_path(params[:id]) %>
             </td>
             <td>
               <%= @findbook.body %>
