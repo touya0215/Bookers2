@@ -4,15 +4,16 @@ class UsersController < ApplicationController
   end
 
   def show
-     @user = User.find(params[:id])
-     @books = @user.books
+    @user = User.find(params[:id])
+    @books = @user.books
+    #@user = User.find(users[:id])
 
   end
 
   def edit
 
   end
-  
+
   def update
     user = User.find(params[:id])
     user.update(user_params)

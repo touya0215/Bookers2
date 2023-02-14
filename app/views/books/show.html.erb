@@ -11,12 +11,12 @@
           <tr>
             <td>
               <%= image_tag @findbook.user.get_profile_image(100,100) %>
-              <%= link_to user_path(params[:id]), class: 'text_light' do %>
+              <%= link_to user_path(@findbook.user.id), class: 'text_lig' do %>
                 <%= @findbook.user.name %>
               <% end %>
             </td>
             <td>
-              <%= link_to @findbook.title, book_path(params[:id]) %>
+              <%= @findbook.title %>
             </td>
             <td>
               <%= @findbook.body %>
