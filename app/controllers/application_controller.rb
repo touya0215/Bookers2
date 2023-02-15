@@ -12,15 +12,15 @@ class ApplicationController < ActionController::Base
 
   def after_log_in_path_for(resource)
     if current_user
-      flash[:notice] = "Welcome! You have signed up successfully."
+      flash[:notice] = "Signed in successfully."
       user_path
     end
   end
 
 
-  def after_sign_out_path_for(resource)
+  def after_log_out_path_for(resource)
     flash[:notice] = "Signed out successfully."
-    about_path
+    root_path
   end
 
 
