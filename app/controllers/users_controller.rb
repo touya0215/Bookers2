@@ -14,6 +14,9 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
+    @book = Book.find(params[:id])
+    @user_list = @book.user
+    redirect_to(books_path) unless @user_list == current_user
   end
 
   def update
