@@ -3,9 +3,17 @@
       <h2>User info</h2>
 
       <tbody>
+        <div class="form_with">
+          <tr>
+            <th>
+              <%= image_tag user.get_profile_image(100,100) %>
+            </th>
+          </tr>
+        </div>
         <tr></tr>
         <div class="form-group">
           <tr>
+            <th></th>
             <th>name</th>
             <th><%= user.name %></th>
           </tr>

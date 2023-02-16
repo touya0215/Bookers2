@@ -8,8 +8,19 @@ class User < ApplicationRecord
 
   has_one_attached :profile_image
 
+  #nameが存在しているか確認するバリデーション
   validates :name, presence: true
 
+  #2～20文字の範囲
+  validates :name, length: { in: 2..20 }
+
+  #一意性
+  validates :name, uniqueness: true
+
+  #最大50文字まで
+  validates :introduction, length: { maximum: 50 }
+
+  #プロフィール画像のサイズと設定してなかった時の画像設定
   def get_profile_image(width, height)
     unless profile_image.attached?
       file_path = Rails.root.join('app/assets/images/no_image.jpg')

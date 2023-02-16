@@ -16,7 +16,9 @@
               <% end %>
             </td>
             <td>
-              <%= @findbook.title %>
+              <%= link_to book_path(params[:id]), class: 'text_lig' do %>
+                <%= @findbook.title %>
+              <% end %>
             </td>
             <td>
               <%= @findbook.body %>
@@ -28,7 +30,7 @@
             </td>
             <td>
               <% if @findbook.user == current_user %>
-                <%= link_to "Delete",book_path(@findbook.id), method: :delete, class:"btn btn-sm btn-danger" %>
+                <%= link_to "Destroy",book_path(@findbook.id), method: :delete, class:"btn btn-sm btn-danger" %>
               <% end %>
             </td>
           </tr>
