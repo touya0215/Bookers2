@@ -6,14 +6,7 @@ class ApplicationController < ActionController::Base
   def after_sign_in_path_for(resource)
     if current_user
       flash[:notice] = "Welcome! You have signed up successfully."
-      user_path(@user[:id])
-    end
-  end
-
-  def after_log_in_path_for(resource)
-    if current_user
-      flash[:notice] = "Signed in successfully."
-      user_path
+      user_path(current_user.id)
     end
   end
 
